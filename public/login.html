@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <script src="script.js" type="module"></script>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="login.css">
+
+</head>
+
+
+<body>
+
+  <div class="login-container">
+    <h2>회원가입</h2>
+
+    <form id="login-form">
+      <div class="input-group">
+        <label for="login-email">이메일</label>
+        <input type="email" id="login-email" required>
+      </div>
+
+      <div class="input-group">
+        <label for="login-password">비밀번호</label>
+        <input type="password" id="login-password" required>
+      </div>
+
+      <div class="input-group">
+        <label for="login-name">이름</label>
+        <input type="text" id="login-name" required>
+      </div>
+
+      <div class="input-group">
+        <label for="login-store">점포명</label>
+        <input type="text" id="login-store" required>
+      </div>
+
+      <div class="input-group">
+        <label for="user-type">직급</label>
+        <select id="user-type" required>
+          <option value="representative">대표자</option>
+          <option value="staff">직원</option>
+        </select>
+      </div>
+
+      <!-- 사업자 등록증 (실제 파일 업로드를 원한다면 input type="file"로 변경) -->
+    <div class="input-group">
+      <label for="business-license">사업자 등록증 번호</label>
+      <input type="file" id="business-license" placeholder="사업자 등록증 번호 입력" required>
+    </div>
+
+    <!-- 매장 주소 입력 및 지도에서 찾기 버튼 -->
+    <div class="input-group">
+      <label for="store-address">매장 주소</label>
+      <input type="text" id="store-address" placeholder="매장 주소 입력" required>
+      <!-- 지도 API 연동 시, 아래 버튼을 눌러 주소를 선택할 수 있도록 구현 가능 -->
+      <button type="button" id="find-address">지도에서 찾기</button>
+    </div>=
+
+    <!-- 전화번호 인증 -->
+    <div class="input-group">
+      <label for="phone-number">전화번호</label>
+      <input type="text" id="phone-number" placeholder="-없이 전화번호 11자리"required>
+      <button type="button" id="send-code">인증번호 받기</button>
+    </div>
+
+    <div class="input-group">
+      <label for="verification-code">인증번호 입력</label>
+      <input type="text" id="verification-code" required>
+      <button type="button" id="verify-code">인증 확인</button>
+    </div>
+
+    <div id="recaptcha-container"></div>
+      <button type="submit" id="signup-button">회원가입하기</button>
+      <div id="error-message" class="error-message"></div>
+    </form>
+
+    <p>이미 계정이 있으신가요? <a href="booking.html">로그인</a></p>
+  </div>
+
+  <script type="module" src="login.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대시보드 - 예약 시스템</title>
+
+  <script src="script.js" type="module"></script>
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+        <div class="dashboard-container">
+          <h2>대시보드</h2>
+          <p>환영합니다, <span id="user-name"></span>님!</p>
+          <button id="logout-button">로그아웃</button>
+        </div>
+      
+        <div class="calendar-container">
+          <h3>예약 달력</h3>
+          <div class="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <h3 id="current-month"></h3>
+            <button id="next-month">&gt;</button>
+          </div>
+          <div class="calendar-grid" id="calendar-grid"></div>
+        </div>
+
+        <!-- 📌 예약 리스트 -->
+        <div class="reservation-list">
+          <h3>내 예약 목록</h3>
+          <ul id="reservation-list"></ul>
+        </div>
+      
+        <div id="reservation-modal">
+          <h2>예약 선택</h2>
+          <p>선택된 날짜: <span id="selected-date"></span></p>
+          
+          <!-- 입력 필드들 추가 -->
+  <label for="guardian-name">보호자 이름:</label>
+  <input type="text" id="guardian-name" placeholder="보호자 이름 입력">
+  
+  <label for="dog-name">강아지 이름:</label>
+  <input type="text" id="dog-name" placeholder="강아지 이름 입력">
+  
+  <label for="dog-age">강아지 나이:</label>
+  <input type="number" id="dog-age" placeholder="강아지 나이 입력">
+  
+  <label for="dog-breed">강아지 종류:</label>
+  <input type="text" id="dog-breed" placeholder="강아지 종류 입력">
+  
+  <label for="phone-number">전화번호:</label>
+  <input type="text" id="phone-number" placeholder="전화번호 입력">
+          
+          
+          <!-- 시간 슬롯이 들어갈 영역 -->
+          <div id="time-slots"></div>
+          <button id="save-reservation">예약 저장</button>
+          <button id="close-modal">닫기</button>
+        </div>
+
+        
+    <!-- Firebase 및 JS 로직 -->
+   <script type="module" src="dashboard.js"></script>
+  </body>
+  
+  </html>
+  

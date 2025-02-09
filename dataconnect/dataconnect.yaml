@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "puppy-yejin"
+location: "asia-northeast3"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "puppy-yejin-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
