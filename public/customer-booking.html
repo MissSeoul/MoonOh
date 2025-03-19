@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고객 예약 - PETMERANG</title>
+  <link rel="stylesheet" href="customer-booking.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMxI8hr3CabA-6g7AczVIaXx39sC5ri_0&libraries=places"></script>
+</head>
+<body>
+  <div class="booking-container">
+    <div id="auth-section">
+      <h2>전화번호 인증</h2>
+      <input type="text" id="phone" readonly>
+      <input type="text" id="verification-code" placeholder="인증 코드 입력" required>
+      <button id="send-code">코드 전송</button>
+      <button id="verify-code">인증 확인</button>
+      <div id="auth-message"></div>
+      <div id="recaptcha-container"></div>
+    </div>
+    <div id="booking-section" style="display: none;">
+      <h2>반려동물 이동 예약</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="pickup-address">픽업 주소</label>
+          <input type="text" id="pickup-address" placeholder="주소 입력" required>
+        </div>
+        <div class="form-group">
+          <label for="shop-select">가게 선택</label>
+          <select id="shop-select" required>
+            <option value="">가게 선택</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">날짜</label>
+          <input type="date" id="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">시간</label>
+          <input type="time" id="time" step="1800" min="08:00" max="10:30" required>
+        </div>
+        <div class="form-group">
+          <label for="guardian-name">보호자 이름</label>
+          <input type="text" id="guardian-name" readonly required>
+        </div>
+        <div class="form-group">
+          <label for="dog-name">강아지 이름</label>
+          <input type="text" id="dog-name" required>
+        </div>
+        <button type="submit">예약하기</button>
+      </form>
+      <div id="message"></div>
+    </div>
+  </div>
+  <script type="module" src="customer-booking.js"></script>
+</body>
+</html>

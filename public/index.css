@@ -72,23 +72,18 @@ body {
 #message h2 {
   color: rgb(255 255 255);
   font-weight: bolder;
-  margin-bottom: -10px;
-  font-size: 30px; /* 폰트 크기 조정 */
+  font-size: 30px;
 }
 
 #message h1 {
   font-size: 25px;
   color: #e4e4e2;
-  margin-bottom: 60px;
 }
 
 #message p {
-  font-size: 20px; /* 글자 크기 조정 */
-  color: #ece8f4; /* 글자 색상 */
-  margin-bottom: -40px; /* 아래쪽 여백 */
-  text-align: center; /* 텍스트 중앙 정렬 */
+  font-size: 20px;
+  color: #ece8f4;
 }
-
 #message a {
   display: inline-block;
   text-decoration: none;
@@ -106,7 +101,13 @@ body {
   box-shadow: 0 8px 20px rgb(214 248 252); /* 호버 시 그림자 강화 */
 }
 
-
+/* 버튼 스타일 */
+#login-button, #signup-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
 button:hover {
   transform: translateY(-5px); /* 호버 시 약간 위로 이동 */
   box-shadow: 0 8px 20px rgb(133 0 255 / 40%); /* 호버 시 그림자 강화 */

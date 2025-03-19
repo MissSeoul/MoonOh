@@ -1,0 +1,22 @@
+//JavaScript/TypeScript 코드의 스타일과 품질을 검사하는 규칙을 정의하는 역할
+//ESLint는 코드 품질을 유지하고, 오류를 줄이며, 일관된 코딩 스타일을 유지하는 데 도움을 주는 도구
+// Cloud Functions 코드가 일관된 스타일로 유지됨
+//팀원들과 일관된 코드 스타일을 유지할 수 있음
+
+
+
+{
+
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "@typescript-eslint/no-require-imports": "off",
+      "no-undef": "off"
+    }
+  }
+  

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매장 정보 - PETMERANG</title>
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+  <div class="shop-container">
+    <!-- 업장 기본 정보 -->
+    <div id="shop-info">
+      <h1 id="shop-name">업장 이름</h1>
+      <img id="shop-image" src="default.jpg" alt="매장 사진">
+      <p id="shop-description">매장 설명</p>
+      <p><strong>운영 시간:</strong> <span id="shop-hours"></span></p>
+      <p><strong>위치:</strong> <span id="shop-location"></span></p>
+    </div>
+
+    <!-- 고객 Q&A -->
+    <div id="shop-faq">
+      <h2>자주 묻는 질문</h2>
+      <ul id="faq-list">
+        <!-- 질문이 여기에 추가됨 -->
+      </ul>
+    </div>
+
+    <!-- 예약 버튼 -->
+    <div id="booking-section">
+      <h2>예약하기</h2>
+      <input type="text" id="customer-phone" placeholder="전화번호 입력 (- 없이)">
+      <input type="text" id="dog-name" placeholder="반려견 이름 입력">
+      <button id="check-schedule">예약 가능 시간 확인</button>
+    </div>
+
+    <!-- 스케줄 선택 -->
+    <div id="schedule-section" style="display: none;">
+      <h3>예약 가능한 시간 선택</h3>
+      <ul id="schedule-list">
+        <!-- 예약 가능 시간이 여기에 추가됨 -->
+      </ul>
+      <button id="confirm-booking">예약하기</button>
+    </div>
+
+    <!-- 운송 서비스 선택 -->
+    <div id="transport-section" style="display: none;">
+      <h3>펫메랑 운송 이용 여부</h3>
+      <button id="use-transport">운송 이용하기</button>
+      <button id="skip-transport">직접 방문</button>
+    </div>
+
+  </div>
+
+  <script type="module" src="shop.js"></script>
+</body>
+</html>

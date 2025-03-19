@@ -1,90 +1,52 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PETMERANG 로그인 페이지">
+  <meta name="author" content="PETMERANG">
+  <title>PETMERANG 로그인</title>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입</title>
-  <script src="script.js" type="module"></script>
-  <link rel="icon" href="data:,">
+  <!-- Noto Sans KR 폰트 추가 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS 연결 -->
   <link rel="stylesheet" href="login.css">
-
 </head>
-
-
 <body>
 
-  <div class="login-container">
-    <h2>회원가입</h2>
+  <!-- 상단 헤더 -->
+  <header id="header">
+    <a href="/">PETMERANG</a>
+  </header>
 
-    <form id="login-form">
+  <!-- 로그인 폼 -->
+  <div class="signup-container">
+    <h1>PETMERANG 로그인</h1>
+
+    <!-- 오류 메시지 출력 -->
+    <div id="error-message" class="error-message"></div>
+
+    <!-- 📌 로그인 폼 -->
+    <form id="signup-form">
       <div class="input-group">
-        <label for="login-email">이메일</label>
-        <input type="email" id="login-email" required>
+        <i class="fas fa-envelope"></i>
+        <input id="email" type="email" placeholder="이메일을 입력하세요" required>
       </div>
 
       <div class="input-group">
-        <label for="login-password">비밀번호</label>
-        <input type="password" id="login-password" required>
+        <i class="fas fa-lock"></i>
+        <input id="password" type="password" placeholder="비밀번호를 입력하세요" required>
       </div>
 
-      <div class="input-group">
-        <label for="login-name">이름</label>
-        <input type="text" id="login-name" required>
-      </div>
-
-      <div class="input-group">
-        <label for="login-store">점포명</label>
-        <input type="text" id="login-store" required>
-      </div>
-
-      <div class="input-group">
-        <label for="user-type">직급</label>
-        <select id="user-type" required>
-          <option value="representative">대표자</option>
-          <option value="staff">직원</option>
-        </select>
-      </div>
-
-      <!-- 사업자 등록증 (실제 파일 업로드를 원한다면 input type="file"로 변경) -->
-    <div class="input-group">
-      <label for="business-license">사업자 등록증 번호</label>
-      <input type="file" id="business-license" placeholder="사업자 등록증 번호 입력" required>
-    </div>
-
-    <!-- 매장 주소 입력 및 지도에서 찾기 버튼 -->
-    <div class="input-group">
-      <label for="store-address">매장 주소</label>
-      <input type="text" id="store-address" placeholder="매장 주소 입력" required>
-      <!-- 지도 API 연동 시, 아래 버튼을 눌러 주소를 선택할 수 있도록 구현 가능 -->
-      <button type="button" id="find-address">지도에서 찾기</button>
-    </div>=
-
-    <!-- 전화번호 인증 -->
-    <div class="input-group">
-      <label for="phone-number">전화번호</label>
-      <input type="text" id="phone-number" placeholder="-없이 전화번호 11자리"required>
-      <button type="button" id="send-code">인증번호 받기</button>
-    </div>
-
-    <div class="input-group">
-      <label for="verification-code">인증번호 입력</label>
-      <input type="text" id="verification-code" required>
-      <button type="button" id="verify-code">인증 확인</button>
-    </div>
-
-    <div id="recaptcha-container"></div>
-      <button type="submit" id="signup-button">회원가입하기</button>
-      <div id="error-message" class="error-message"></div>
+      <button type="submit" id="signup-btn">로그인하기</button>
     </form>
-
-    <p>이미 계정이 있으신가요? <a href="booking.html">로그인</a></p>
+    
+    <p>계정이 없으신가요? <a href="signup.html">회원가입</a></p>
   </div>
 
-  <script type="module" src="login.js"></script>
+  <!-- Firebase 및 JS 로직 -->
+  <script type="module" src="./login.js"></script>
+  <script type="module" src="./firebase.js"></script>
 </body>
-
-
 </html>

@@ -1,219 +1,215 @@
-/* 전역 폰트 및 기본 스타일 */
+/* 기존 스타일 유지 */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f7fc;
-  color: #333;
+  background-color: #f9fafb;
+  color: #2d3748;
 }
 
-/* 대시보드 전체 컨테이너 */
-.calendar-container {
-  display : flex;
-  flex-direction: column;
-  align-items: center;
-  width: 1000%;
-  max-width: 700px;
-  margin: 5px auto;
-  padding: 180px;
+.booking-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
   background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
 }
 
-/* 요일 헤더 스타일 */
-.calendar-weekdays {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+h2 {
+  font-size: 1.9em;
+  color: #2d3748;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
   font-weight: 500;
-  padding: 15px 0;
-  background: linear-gradient(135deg, #6f5df1, #0c84f1);
-  color: #fff;
-  border-radius: 8px;
+  color: #4a5568;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #667eea;
+  outline: none;
+}
+
+button {
   width: 100%;
-  margin-bottom: 16px;
-}
-
-/* 달력 그리드 스타일 */
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-  width: 130%;
-  text-align: center;
-  margin-top: -px;
-}
-
-/* 요일 제목 */
-.day-header {
-  padding: 15px ;
-  background-color: #e5e9f2;
-  border-radius: px;
-  font-size: 1.4em;
-  font-weight: bold;
-  color: #3f3f3f;
-}
-
-/* 날짜 버튼 스타일 */
-.calendar-day {
-  background: #fff;
-  border: 2px solid #e8f0fe;
-  border-radius: 12px;
-  padding: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90px;
-  font-size: 1.5em;
-}
-
-.calendar-day:hover {
-  background-color: #e8f0fe;
-  color: #3f3f3f;
-  transform: scale(1.05);
-}
-
-/* 오늘 날짜 강조 */
-.today {
-  background: #000868;
-  font-weight: bold;
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 30%);
-}
-
-/* 빈 칸 (해당 월 시작 전) */
-.empty-day {
-  visibility: hidden;
-}
-
-/* 선택된 날짜 스타일 */
-.selected-day {
-  background-color: #e2a9c6 !important;
-  color: #fff !important;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(12, 132, 241, 0.4);
-}
-
-/* 시간 슬롯 컨테이너 */
-#time-slots {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
   padding: 12px;
-  border: 1px solid #e0e6f2;
-  border-radius: 8px;
-  background-color: #f4f9fe;
-  margin-top: 25px;
-  max-height: 250px;
-  overflow-y: auto;
-}
-
-/* time-slot 버튼 스타일 */
-.time-slot {
-  background-color: #000868;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: #fff;
   border: none;
-  padding: 5px 15px;
-  font-size: 1.0em;
+  border-radius: 12px;
+  font-size: 1.2em;
   cursor: pointer;
-  border-radius: 50px;
-  transition: background-color 0.3s, transform 0.2s ease;
+  transition: background 0.3s ease;
 }
 
-.time-slot:hover {
-  background-color: #e2a9c6;
-  transform: translateY(-2px);
+button:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
 }
 
-/* 선택된 시간 슬롯 스타일 */
-.time-slot.selected {
-  background-color: #0c84f1;
-  font-weight: bold;
+#message, #auth-message {
+  margin-top: 10px;
+  font-size: 1em;
+  text-align: center;
+  color: red;
 }
 
-/* 예약 팝업창 (모달) */
+/* 인증 섹션 스타일 */
+#auth-section button {
+  margin-top: 10px;
+}
+
+/* 모바일 반응형 */
+@media (min-width: 768px) {
+  .form-group {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-group label {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .form-group input,
+  .form-group select {
+    flex: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  button {
+    font-size: 1em;
+  }
+}
+
+/* 추가: 대시보드 컨테이너와 예약 목록 스타일 */
+.dashboard-container, .reservation-list {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* 추가: 캘린더 스타일 */
+.calendar-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calendar-header button {
+  width: auto;
+  padding: 5px 10px;
+  font-size: 1em;
+}
+
+.calendar-weekdays, .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.calendar-weekdays div {
+  padding: 10px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.calendar-grid .calendar-day {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+}
+
+.calendar-grid .calendar-day:hover {
+  background: #e2e8f0;
+}
+
+/* 추가: 예약 모달 스타일 */
 #reservation-modal {
-  display: none; /* 기본 숨김 */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 320px;
-  background: #fff;
-  padding: 28px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  z-index: 1001;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* 팝업 배경 오버레이 */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
   z-index: 1000;
+  max-width: 500px;
+  width: 90%;
 }
 
-/* 예약 팝업 내부 폼 스타일 */
-#reservation-modal label {
-  display: block;
+#reservation-modal h2 {
+  font-size: 1.5em;
+}
+
+#reservation-modal button {
+  width: 48%;
   margin-top: 10px;
-  font-weight: 1000;
-  color: #555;
-  font-size: 1.0em;
+  font-size: 1em;
 }
 
-#reservation-modal input,
-#reservation-modal select {
-  width: 80%;
+#reservation-modal #save-reservation {
+  margin-right: 4%;
+}
+
+/* 예약 목록 스타일 개선 */
+.reservation-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reservation-list li {
   padding: 10px;
-  margin-top: 8px;
-  border: 1px solid #ccd0d5;
-  border-radius: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.reservation-list li button {
+  width: auto;
+  padding: 5px 10px;
   font-size: 0.9em;
-  background-color: #f7f9fc;
-}
-
-/* 예약 저장 버튼 */
-#save-reservation {
-  background-color: #000868;
-  color: #fff;
-  padding: 14px;
-  border: none;
-  width: 100%;
-  margin-top: 18px;
-  border-radius: 8px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#save-reservation:hover {
-  background-color: #000868;
-}
-
-/* 예약 팝업 닫기 버튼 */
-#close-modal {
-  background-color: #a3b9e4;
-  color: #fff;
-  padding: 14px;
-  border: none;
-  width: 100%;
-  margin-top: 12px;
-  border-radius: 8px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#close-modal:hover {
-  background-color: #c82333;
+  margin-left: 5px;
 }
